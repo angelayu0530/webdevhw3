@@ -1,11 +1,17 @@
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+name: Deploy React App to GitHub Pages
+
+# Trigger workflow on push to main branch
+on:
+  push:
+    branches:
+      - main  # change this if your default branch is not main
+
+# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
@@ -15,7 +21,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # or the version used in your project
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install
@@ -28,7 +34,6 @@ jobs:
         with:
           path: ./build
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
