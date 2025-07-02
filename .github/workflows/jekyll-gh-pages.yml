@@ -1,12 +1,16 @@
 name: Deploy React App to GitHub Pages
 
-# Trigger workflow on push to main branch
 on:
   push:
     branches:
-      - main  # change this if your default branch is not main
+      - main
 
-# Allow only one concurrent deployment
+# Set required permissions for deploying to GitHub Pages
+permissions:
+  contents: read
+  id-token: write
+  pages: write
+
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -44,4 +48,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
