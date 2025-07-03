@@ -61,11 +61,6 @@ const secretMenu = [
   }
 ];
 
-// Helper to get correct image path for GitHub Pages
-function getImagePath(filename) {
-  // If running on GitHub Pages, use process.env.PUBLIC_URL
-  return process.env.PUBLIC_URL + '/images/' + filename;
-}
 
 function addToCart(name, price) {
   const priceNum = typeof price === 'string' ? parseFloat(price.replace('$', '')) : price;
