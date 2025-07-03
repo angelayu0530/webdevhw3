@@ -8,12 +8,12 @@ import Contact from './Contact';
 import Cart from './Cart';
 
 const sliderImages = [
-  '/images/resturant1.jpg',
-  '/images/resturant2.jpg',
-  '/images/image3.webp',
-  '/images/image5.jpg',
-  '/images/image 10.jpg',
-  '/images/lol.webp'
+  process.env.PUBLIC_URL + '/images/resturant1.jpg',
+  process.env.PUBLIC_URL + '/images/resturant2.jpg',
+  process.env.PUBLIC_URL + '/images/image3.webp',
+  process.env.PUBLIC_URL + '/images/image5.jpg',
+  process.env.PUBLIC_URL + '/images/image 10.jpg',
+  process.env.PUBLIC_URL + '/images/lol.webp'
 ];
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
       <div className="App">
         <header className="navbar">
           <div className="nav-left">
-            <img src="/images/InNOut_2021_logo.svg.png" alt="In-N-Out Logo" className="logo" />
+            <img src={process.env.PUBLIC_URL + "/images/InNOut_2021_logo.svg.png"} alt="In-N-Out Logo" className="logo" />
           </div>
           <div className="nav-center">
             <h1 className="title">IN-N-OUT</h1>
@@ -51,7 +51,7 @@ function App() {
             <Link to="/contact">Contact</Link>
             <Link to="/cart" className="cart-link">
               <img
-                src="/images/images123.png"
+                src={process.env.PUBLIC_URL + "/images/images123.png"}
                 alt="Cart"
                 style={{ height: '1.5em', verticalAlign: 'middle' }}
               />
@@ -66,7 +66,7 @@ function App() {
               <main className="main">
                 <div className="main-h1">
                   <h1 className="h1">Welcome to In-N-Out</h1>
-                  <img src="/images/double-double-meal.webp" alt="In-N-Out Burger" className="main-image" />
+                  <img src={process.env.PUBLIC_URL + "/images/double-double-meal.webp"} alt="In-N-Out Burger" className="main-image" />
                 </div>
               </main>
               <div className="slider-container">

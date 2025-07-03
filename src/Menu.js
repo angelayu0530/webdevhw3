@@ -61,6 +61,12 @@ const secretMenu = [
   }
 ];
 
+// Helper to get correct image path for GitHub Pages
+function getImagePath(filename) {
+  // If running on GitHub Pages, use process.env.PUBLIC_URL
+  return process.env.PUBLIC_URL + '/images/' + filename;
+}
+
 function addToCart(name, price) {
   const priceNum = typeof price === 'string' ? parseFloat(price.replace('$', '')) : price;
   const cart = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -85,6 +91,9 @@ function Menu() {
         <ul className="menu-list">
           {regularMenu.map(item => (
             <li className="menu-item" key={item.name}>
+              {/* Example usage if you want to show images for menu items:
+              <img src={getImagePath('double-double.jpg')} alt={item.name} />
+              */}
               <h3>{item.name}</h3>
               <p>{item.description}</p>
               <span className="price">{item.price}</span>
