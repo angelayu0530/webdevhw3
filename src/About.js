@@ -1,5 +1,9 @@
 import React from 'react';
 
+function getImagePath(filename) {
+  return process.env.PUBLIC_URL + '/images/' + filename;
+}
+
 function About() {
   return (
     <div>
@@ -18,7 +22,7 @@ function About() {
         <div className="about-container">
           <div className="about-image-block">
             <img
-              src="/images/first.jpeg"
+              src={getImagePath('first.jpeg')}
               alt="First In-N-Out Restaurant"
               className="about-image-block img"
             />
@@ -27,7 +31,7 @@ function About() {
 
           <div className="about-image-block">
             <img
-              src="/images/second.webp"
+              src={getImagePath('second.webp')}
               alt="Current Owner of In-N-Out"
               className="about-image-block img"
             />
