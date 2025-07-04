@@ -86,9 +86,6 @@ function Menu() {
         <ul className="menu-list">
           {regularMenu.map(item => (
             <li className="menu-item" key={item.name}>
-              {/* Example usage if you want to show images for menu items:
-              <img src={getImagePath('double-double.jpg')} alt={item.name} />
-              */}
               <h3>{item.name}</h3>
               <p>{item.description}</p>
               <span className="price">{item.price}</span>
