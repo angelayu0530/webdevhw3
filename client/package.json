@@ -2,7 +2,7 @@
   "name": "webdevhw3",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://angelayu0530.github.io/homework3",
+  "homepage": "https://angelayu0530.github.io/webdevhw3",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
